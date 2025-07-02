@@ -1,0 +1,12 @@
+universe        = vanilla
+executable      = /mnt/c/Users/alsay/Downloads/HW4/venv/bin/python3
+arguments       = condor_job_script.py $(Process) 500
+output          = log/job_$(Process).out
+error           = log/job_$(Process).err
+log             = log/job_$(Process).log
+request_cpus    = 1
+request_memory  = 512MB
+should_transfer_files = YES
+when_to_transfer_output = ON_EXIT
+transfer_input_files = condor_job_script.py
+queue 500 
