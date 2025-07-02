@@ -1,5 +1,7 @@
 # gather_and_plot.py
 import numpy as np
+import matplotlib
+matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 import os
 import glob
@@ -58,5 +60,6 @@ if __name__ == "__main__":
     plt.xlabel('Parameter $r$')
     plt.ylabel('$x_{n+1}$ values (long-term behavior)')
     plt.grid(True, linestyle='--', alpha=0.7)
-    plt.show()
-    print("Plot generated successfully.")
+    plt.savefig("bifurcation_map.png")
+    # plt.show()  # Disabled for headless environments
+    print("Plot saved as bifurcation_map.png")
